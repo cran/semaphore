@@ -1,0 +1,13 @@
+46b48c3205a24051f027f0f3495bf7a9 *DESCRIPTION
+7c26feaf0d13370685142aa315df2593 *LICENSE
+37c083f07f7fb629623723f0764fae2c *NAMESPACE
+be6a9a249221525c7be6596d12ac1f33 *NEWS.md
+736346b94efa25bb031198379b24eac3 *R/RcppExports.R
+46efe744a9ff5fd16f69cd86f4e9bb44 *R/semaphore.r
+c5942e0d5adc27b442a923d185c6c749 *R/zzz.r
+a165532db9862a87a4ce3c92a6b058fe *README.md
+b328048ef752e69c468558d25f0d1635 *man/semaphores.Rd
+c615324fdfdbbcc225f6ad28db37b8f6 *src/RcppExports.cpp
+2a5b25290c35000ec958f6fb12ee9961 *src/semaphore.cpp
+c3a7712e87bbc79832d49267dbbf8cd9 *tests/testthat.r
+d54c1d870bd81ee79e9814749863e865 *tests/testthat/test-semaphore.r
