@@ -1,8 +1,8 @@
 Package: semaphore
 Type: Package
 Title: Shared Memory Atomic Operations
-Version: 1.0.1
-Date: 2024-11-08
+Version: 1.0.2
+Date: 2024-11-12
 Authors@R: c(
     person(
       "Daniel P.", "Smith",
@@ -24,14 +24,13 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 RoxygenNote: 7.3.2
 Config/testthat/edition: 3
-Depends: R (>= 4.2.0)
 LinkingTo: Rcpp, BH
 Imports: Rcpp
-Suggests: testthat (>= 3.0.0)
+Suggests: testthat
 NeedsCompilation: yes
-Packaged: 2024-11-08 17:49:24 UTC; Daniel
+Packaged: 2024-11-12 23:01:17 UTC; Daniel
 Author: Daniel P. Smith [aut, cre] (<https://orcid.org/0000-0002-2479-2044>),
   Alkek Center for Metagenomics and Microbiome Research [cph, fnd]
 Maintainer: Daniel P. Smith <dansmith01@gmail.com>
 Repository: CRAN
-Date/Publication: 2024-11-11 20:40:02 UTC
+Date/Publication: 2024-11-13 08:30:02 UTC
