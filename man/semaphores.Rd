@@ -17,20 +17,26 @@ remove_semaphore(id)
 }
 \arguments{
 \item{id}{A semaphore identifier (string). \code{create_semaphore()}
-defaults to generating a random identifier.}
+defaults to generating a random identifier. A custom
+id should be at most 251 characters and must not contain
+slashes (\code{/}).}
 
 \item{value}{The initial value of the semaphore.}
 
 \item{cleanup}{Remove the semaphore when R session exits.}
 
-\item{wait}{If \code{TRUE}, blocks until semaphore is greater than zero.}
+\item{wait}{Whether/how long to wait for the semaphore:
+\itemize{
+\item \code{FALSE}: return immediately.
+\item \code{TRUE}: block until semaphore available.
+\item \strong{integer}: this many seconds at most.
+}}
 }
 \value{
 \itemize{
 \item \code{create_semaphore()} - The created semaphore's identifier (string), invisibly when \code{semaphore} is non-\code{NULL}.
 \item \code{increment_semaphore()} - \code{TRUE}, invisibly.
-\item \code{decrement_semaphore(wait = TRUE)} - \code{TRUE}, invisibly.
-\item \code{decrement_semaphore(wait = FALSE)} - \code{TRUE} if the decrement was successful; \code{FALSE} otherwise.
+\item \code{decrement_semaphore()} - \code{TRUE} if the decrement was successful; \code{FALSE} otherwise, invisibly when \code{wait=TRUE}.
 \item \code{remove_semaphore()} - \code{TRUE} on success; \code{FALSE} on error.
 }
 }
@@ -42,7 +48,11 @@ When the semaphore is zero, calling \code{decrement_semaphore(wait = FALSE)}
 will return \code{FALSE} whereas \code{decrement_semaphore(wait = TRUE)} will
 block until the semaphore is incremented by another process.
 If multiple processes are blocked, a single call to \code{increment_semaphore()}
-will only unblock one of the blocked processes.
+will only unblock one of the blocked processes.\cr\cr
+It is possible to wait for a specific amount of time, for example,
+\code{decrement_semaphore(wait = 10)} will wait for 10 seconds. If the semaphore
+is incremented within those 10 seconds, the function will immediately return
+\code{TRUE}. Otherwise it will return \code{FALSE} at the 10 second mark.
 }
 \examples{
 
